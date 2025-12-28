@@ -1,0 +1,51 @@
+# This is an example PKGBUILD file. Use this as a start to creating your own,
+# and remove these comments. For more information, see 'man PKGBUILD'.
+# NOTE: Please fill out the license field for your package! If it is unknown,
+# then please put 'unknown'.
+
+# Maintainer: user8885 <takodajhorton@protonmail.com>
+pkgname=dracula-theme-user8885-git
+pkgver=0.1
+pkgrel=1
+epoch=
+pkgdesc="Colloid(dracula), Tela Circle(dracula), gtk theme with kvantum theme"
+arch=()
+url="https://github.com/user8885/dracula-theme-user8885"
+license=('MIT')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=(git+$url)
+noextract=()
+sha256sums=(skip)
+validpgpkeys=()
+
+pkgver() {
+    cd "${_pkgname}"
+    printf "0.1.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+    cd dracula-theme-user8885
+
+    mkdir -p ${pkgdir}/usr/share/themes
+    cp -rf themes/* ${pkgdir}/usr/share/themes/
+
+    mkdir -p ${pkgdir}/usr/share/icons
+    cp -rf icons/* ${pkgdir}/usr/share/icons/
+
+    mkdir -p ${pkgdir}/usr/share/Kvantum
+    cp -rf Kvantum/* ${pkgdir}/usr/share/Kvantum/
+
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    install -Dm644 README.MD "${pkgdir}/usr/share/licenses/${pkgname}/README.MD"
+}
