@@ -8,27 +8,12 @@ _pkgname=dracula-theme-user8885
 pkgname="${_pkgname}-git"
 pkgver=0.1.r1.d37b92c5
 pkgrel=1
-epoch=
 pkgdesc="Colloid(dracula), Tela Circle(dracula), gtk theme with kvantum theme"
 arch=(any)
 url="https://github.com/user8885/dracula-theme-user8885"
 license=('MIT')
-groups=()
-depends=()
-makedepends=()
-checkdepends=()
-optdepends=()
-provides=()
-conflicts=()
-replaces=()
-backup=()
-options=()
-install=
-changelog=
 source=(git+$url)
-noextract=()
 sha256sums=(SKIP)
-validpgpkeys=()
 
 pkgver() {
     cd "${_pkgname}"
