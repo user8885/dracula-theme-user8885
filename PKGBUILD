@@ -6,7 +6,7 @@
 # Maintainer: user8885 <takodajhorton@protonmail.com>
 _pkgname=dracula-theme-user8885
 pkgname="${_pkgname}-git"
-pkgver=0.1.r1.d37b92c5
+pkgver=0.1.r4.87d2bf4b
 pkgrel=1
 pkgdesc="Colloid(dracula), Tela Circle(dracula), gtk theme with kvantum theme"
 arch=(any)
@@ -21,7 +21,7 @@ pkgver() {
 }
 
 package() {
-    cd dracula-theme-user8885
+    cd ${_pkgname}
 
     mkdir -p ${pkgdir}/usr/share/themes
     cp -rf themes/* ${pkgdir}/usr/share/themes/
