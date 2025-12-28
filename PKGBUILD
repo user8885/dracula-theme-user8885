@@ -4,12 +4,13 @@
 # then please put 'unknown'.
 
 # Maintainer: user8885 <takodajhorton@protonmail.com>
-pkgname=dracula-theme-user8885-git
-pkgver=0.1
+_pkgname=dracula-theme-user8885
+pkgname="${_pkgname}-git"
+pkgver=0.1.r1.d37b92c5
 pkgrel=1
 epoch=
 pkgdesc="Colloid(dracula), Tela Circle(dracula), gtk theme with kvantum theme"
-arch=()
+arch=(any)
 url="https://github.com/user8885/dracula-theme-user8885"
 license=('MIT')
 groups=()
@@ -26,7 +27,7 @@ install=
 changelog=
 source=(git+$url)
 noextract=()
-sha256sums=(skip)
+sha256sums=(SKIP)
 validpgpkeys=()
 
 pkgver() {
@@ -47,5 +48,5 @@ package() {
     cp -rf Kvantum/* ${pkgdir}/usr/share/Kvantum/
 
     install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-    install -Dm644 README.MD "${pkgdir}/usr/share/licenses/${pkgname}/README.MD"
+    install -Dm644 README.MD "${pkgdir}/usr/share/doc/${pkgname}/README.MD"
 }
